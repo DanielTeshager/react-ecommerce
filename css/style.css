@@ -27,7 +27,9 @@ button:hover{
 a{
     color: var(--gray);
 }
-
+.hide{
+    display: none;
+}
 /* container */
 .container{
     width: 75%;
@@ -43,6 +45,12 @@ header{
     align-items: center;
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border-grey);
+}
+header .logo{
+    display: block;
+}
+header .logo .hamburger{
+    display: none;
 }
 header .cart-profile{
     display: flex;
@@ -62,9 +70,91 @@ header a h2{
 header .main-nav{
     display: flex;
     align-items: center;
-    gap: 5rem;
-    margin-left: 40px; 
+    gap: 3rem;
+    margin-left: 2rem; 
 }
+/* 
+Cart
+*/
+.cart-content{
+    display:none;
+}
+.cart{
+    position: relative;
+    
+}
+.show-cart{
+    display: flex;
+    align-items: flex-start;
+    justify-content:start;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    left: -17rem;
+    width: 22rem;
+    min-height: 8rem;
+    background: rgb(255 255 255);
+    z-index: 9999;
+    border-radius: .8rem;
+    transition: all 0.7s ease-in-out;
+    box-shadow: 1px 15px 20px 1px #ccc;
+}
+.cart-info{
+    border-bottom: 1px solid var(--border-grey);
+    width: 100%;
+    padding: 1rem;
+}
+.cart .empty{
+    padding: 0.5rem 1rem;
+}
+.cart-quantity-badge{
+    position: absolute;
+    top: -12px;
+    left: 5px;
+    font-size: .8rem;
+    background: red;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cart-items{
+    display: flex;
+    /* align-items: self-start; */
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    gap: .5rem;
+}
+.cart-items li{
+    display: flex;
+    justify-content: space-around;
+}
+.cart-item span{
+    display: inline-block;
+    max-width: 20ch;
+}
+.cart-item .cart-item-image{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--orange);
+    margin-right: 1rem;
+}
+.cart-item-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+.cart-item-remove{
+    cursor: pointer;
+}
+
 
 /* 
 main content
@@ -87,6 +177,9 @@ main content
 }
 .item-image img{
     border-radius: .8rem;
+}
+.image-nav{
+    display: none;
 }
 .tiny-images{
     display: flex;
@@ -155,10 +248,10 @@ main content
     color: var(--gray);
 }
 .quantity{
-    padding: 1rem;
-    width: 7rem;
+    /* padding: 1rem; */
+    /* width: 7rem; */
     display: flex; 
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background: #dfdfdf;
     color: var(--orange);
     border-radius: .5rem;
@@ -166,8 +259,9 @@ main content
 .quantity .number{
     color: var(--black);
 }
-.plus, .minus{
+.number, .plus, .minus{
     cursor: pointer;
+    padding: 1rem;
 }
 .buttons{
     display: flex;
@@ -189,7 +283,7 @@ main content
 Media queries
 */
 
-@media screen and (max-width: 375px){
+@media screen and (min-device-width: 345px) and (max-device-width: 768px) { 
     .container{
         width: 100%;
         /* padding: 1rem  */
@@ -199,8 +293,10 @@ Media queries
         border:none;
     }
     header .logo .hamburger{
+        display: block;
         font-size: 1.2rem;
         font-weight: bolder;
+        cursor: pointer;
     }
     header .logo{
         display: flex;
@@ -270,6 +366,10 @@ Media queries
     }
     .main-content .showcase .tiny-images{
         display: none;
+    }
+    .main-content .item-details{
+        width: 100%;
+        padding: 1rem;
     }
 }
     
