@@ -104,3 +104,45 @@ cart_items_container.addEventListener('click', function(e) {
     }
 });
 
+//handle showcase lightbox
+const showcase = document.querySelector('#showcase');
+const lightbox = document.querySelector('#lightbox');
+//dispaly the lightbox
+showcase.addEventListener('click', function(e) {
+    if(e.target.classList.contains('showcase-img')) {
+        document.querySelector('.lightbox').classList.add('show-lightbox');
+        document.querySelector('.lightbox img').src = e.target.src;
+    }
+    //show the lightbox
+    document.querySelector('#lightbox').classList.remove('hide');
+});
+
+// close the lightbox using the close-lightbox button
+document.querySelector('.close-lightbox').addEventListener('click', function() {
+    document.querySelector('#lightbox').classList.add('hide');
+});
+
+//next and previous images in lightbox
+document.querySelector('.next').addEventListener('click', function() {
+    let current = document.querySelector('#lightbox .big-product-image').src;
+    let base = current.substring(0, current.lastIndexOf('/') + 1);
+        current = current.split('/')[current.split('/').length - 1];
+    console.log(current);
+    let next = current.replace(/[0-9]/g, function(i) {
+        return i === '4' ? '1' : ++i;
+    });
+    document.querySelector('#lightbox .big-product-image').src = base+''+next;
+    let next_thumbnail = (next.split('.')[0]+'-thumbnail.jpg');
+    let prev_thumbail = (current.split('.')[0]+'-thumbnail.jpg');
+    console.log('next', next_thumbnail);
+    let parent = document.querySelector(`#lightbox ul li img[src="./images/${next_thumbnail}"]`).parentElement;
+    parent.classList.add('active');
+    //remove active class from previous image
+    document.querySelector(`#lightbox ul li img[src="./images/${prev_thumbail}"]`).parentElement.classList.remove('active');
+    // change active tile
+    // document.querySelector('#lightbox .tiny-images .active').classList.remove('active');
+    // select li by it's child image attribute
+    // document.querySelector('#lightbox .tiny-images li[data-image="'+next+'"]').classList.add('active');
+//    console.log(document.querySelector('#lightbox img[src="'+base+''+(next.split('.')[0])+'-thumbnail.jpg"]'));
+});
+

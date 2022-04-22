@@ -185,6 +185,9 @@ main content
     display: flex;
     gap:.5rem;
 }
+.tiny-images li.active img{
+    border: 1px solid var(--orange);
+}
 .tiny-images li{
     cursor: pointer;
     border-radius: .5rem;
@@ -353,6 +356,7 @@ Media queries
         display: block;
         width: 2rem;
         height: 2rem;
+        cursor: pointer;
         /* border-radius: 50%;
         background: var(--white); */
     }
@@ -372,4 +376,62 @@ Media queries
         padding: 1rem;
     }
 }
-    
+   
+/* Light Box */
+#lightbox{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(65, 65, 65, 0.7);
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+#lightbox .main-item{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+    background: var(--white);
+    border-radius: .5rem;
+    /* box-shadow: 0 0 5px rgba(0,0,0,0.5); */
+    background: transparent;
+}
+
+#lightbox .image-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    bottom: 50%;
+}
+#lightbox .image-nav .next,#lightbox .image-nav .prev{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    /* border-radius: 50%;
+    background: var(--white); */
+}
+#lightbox .image-nav .prev img, #lightbox .image-nav .next img{
+    width: 100%;
+    background: white;
+    border-radius: 50%;
+    height: 100%;
+    padding: 0.2rem;
+    border: 6px solid white;
+}
+
+#lightbox .close-lightbox{
+    position: absolute;
+    top: -2.5rem;
+    right: -1rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: white;
+}
