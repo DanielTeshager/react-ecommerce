@@ -100,7 +100,7 @@ Cart
     z-index: 9999;
     border-radius: .8rem;
     transition: all 0.7s ease-in-out;
-    box-shadow: 1px 15px 20px 1px #ccc;
+    box-shadow: -1px 4px 5px #18181870;
 }
 .cart-info{
     border-bottom: 1px solid var(--border-grey);
