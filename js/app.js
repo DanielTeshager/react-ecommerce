@@ -207,3 +207,8 @@ document.querySelector('.lprev').addEventListener('click', function() {
     document.querySelector(`#lightbox ul li img[src="./images/${prev_thumbail}"]`).parentElement.classList.remove('active');
 
 });
+
+// handle hamburger menu
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.main-nav').classList.toggle('show');
+});
