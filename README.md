@@ -9,9 +9,6 @@
   - [Continued development](#continued-development)
   - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
-
 ### Feature 
 
 Users should be able to:
@@ -43,9 +40,9 @@ Users should be able to:
 
 ### Continued development
 The Javascript code needs to be refactored to be more modular and reusable.
-More features will be added to the site, such as: fetching data from a database, animations, and more.
+More features will be added to the site, such as: fetching data from a database, checkout, payment option and more...
 
 ## Author
 
-- Twitter - [@danteshager](https://www.twitter.com/yourusername)
+- Twitter - [@danteshager](https://www.twitter.com/danteshager)
 
